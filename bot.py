@@ -74,8 +74,7 @@ def CancelGuide(update, context):
                "-> Make payment, get host to accept -> Charge🔌"
     update.message.reply_text(output)
     context.bot.sendVideo(chat_id=update.effective_chat.id,
-                            video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcompressedcancel.mp4?alt=media&token=821630d1-453e-43c2-a292-a1b43ff680c6",
-                          caption="Cancel Process")
+                            video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcompressedcancel.mp4?alt=media&token=821630d1-453e-43c2-a292-a1b43ff680c6")
 
 
 
