@@ -61,9 +61,10 @@ def BookingGuide(update, context):
     output = "To book🔌:\n\n Go to Charge Map -> Select Charger -> Book charger -> Contact host if required" \
                "-> Make payment, get host to accept -> Charge🔌"
     update.message.reply_text(output)
-    context.bot.sendPhoto(chat_id=update.effective_chat.id,
+    context.bot.send_animation(chat_id=update.effective_chat.id,
                           photo="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fonplatform.GIF?alt=media&token=dd395075-883b-46bb-b06f-e6cfef3d4618",
                           caption="Chargers on our platform")
+
 
 def PaymentType(update, context):
     output = "There are currently two main options to pay \n\n1)Paynow 📲 \n2)Crypto (Bitcoin & Ethereum) 🌏\n\n" \
@@ -72,7 +73,9 @@ def PaymentType(update, context):
 
 def crypto(update, context):
     update.message.reply_text("To make a crypto transfer, request the host to send their wallet address 👝. \n\n ChargeEV will not be responsible for loss funds")
-    context.bot.sendPhoto(chat_id=update.effective_chat.id, photo="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fegbtc%20(2).jpg?alt=media&token=fa2c426c-c216-413b-b017-4fe140d1a083", caption="Example Image")
+    context.bot.sendPhoto(chat_id=update.effective_chat.id,
+                          photo="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fegbtc%20(2).jpg?alt=media&token=fa2c426c-c216-413b-b017-4fe140d1a083",
+                          caption="Example Image")
 
 def paynow(update, context):
     update.message.reply_text("To make a paynow transfer, request the host to send their Phone Number or QR code 📱. \n\n ChargeEV will not be responsible for loss funds")
