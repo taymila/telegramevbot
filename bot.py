@@ -63,7 +63,7 @@ def BookingGuide(update, context):
     update.message.reply_text(output)
     update.message.reply_text("For ChargeEV chargers")
     context.bot.sendVideo(chat_id=update.effective_chat.id,
-                          photo="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fonplatform.GIF?alt=media&token=dd395075-883b-46bb-b06f-e6cfef3d4618",
+                            video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fonplatform.GIF?alt=media&token=dd395075-883b-46bb-b06f-e6cfef3d4618",
                           caption="Example Image")
     update.message.reply_text("For non ChargeEV chargers")
 
@@ -76,7 +76,7 @@ def PaymentType(update, context):
 def crypto(update, context):
     update.message.reply_text("To make a crypto transfer, request the host to send their wallet address 👝. \n\n ChargeEV will not be responsible for loss funds")
     context.bot.sendPhoto(update.effective_chat.id,
-                          "https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fegbtc%20(2).jpg?alt=media&token=fa2c426c-c216-413b-b017-4fe140d1a083",
+                          photo="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fegbtc%20(2).jpg?alt=media&token=fa2c426c-c216-413b-b017-4fe140d1a083",
                           caption="Example Image")
 
 def paynow(update, context):
