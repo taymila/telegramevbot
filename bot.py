@@ -42,7 +42,7 @@ def queryHandler(update, context):
                                   'Press /help to learn more about me')
     if (update.callback_query.data == "2"):
         context.bot.send_message(chat_id=update.effective_chat.id,
-                             text= "You selected Hosts")
+                             text= "You selected Host")
     else:
         return
 
@@ -61,6 +61,9 @@ def BookingGuide(update, context):
     output = "To book🔌:\n\n Go to Charge Map -> Select Charger -> Book charger -> Contact host if required" \
                "-> Make payment, get host to accept -> Charge🔌"
     update.message.reply_text(output)
+    context.bot.sendPhoto(chat_id=update.effective_chat.id,
+                          photo="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fonplatform.GIF?alt=media&token=dd395075-883b-46bb-b06f-e6cfef3d4618",
+                          caption="Chargers on our platform")
 
 def PaymentType(update, context):
     output = "There are currently two main options to pay \n\n1)Paynow 📲 \n2)Crypto (Bitcoin & Ethereum) 🌏\n\n" \
