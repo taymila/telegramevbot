@@ -39,6 +39,7 @@ def queryHandler(update, context):
                                   '/BookingGuide\n\n'
                                   '/PaymentType\n\n'
                                   '/Policy\n\n'
+                                  '/CancelBooking\n\n'
                                   'Press /help to learn more about me')
     if (update.callback_query.data == "2"):
         context.bot.send_message(chat_id=update.effective_chat.id,
@@ -66,19 +67,15 @@ def BookingGuide(update, context):
                             video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcancelbooking.MP4?alt=media&token=8f3d6f01-1098-4133-b163-08bfa3c35cf8",
                           caption="Example Image")
     update.message.reply_text("For non ChargeEV chargers")
-    context.bot.send_animation( chat_id=update.effective_chat.id,
-                                animation='https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fresetpassword.gif?alt=media&token=616ab798-e561-46fd-9b7a-d4d7789cef8c',
-                                caption='go back??')
+
 
 def CancelGuide(update, context):
-    output = "To book🔌:\n\n Go to Charge Map -> Select Charger -> Book charger -> Contact host if required" \
+    output = "To cancel:\n\n Go to Inbox -> Select Booking -> Cancel Booking -> Cancel Booking" \
                "-> Make payment, get host to accept -> Charge🔌"
     update.message.reply_text(output)
-    update.message.reply_text("For ChargeEV chargers")
     context.bot.sendVideo(chat_id=update.effective_chat.id,
-                            video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcancelbooking.MP4?alt=media&token=8f3d6f01-1098-4133-b163-08bfa3c35cf8",
-                          caption="Example Image")
-    update.message.reply_text("For non ChargeEV chargers")
+                            video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcompressedcancel.mp4?alt=media&token=821630d1-453e-43c2-a292-a1b43ff680c6",
+                          caption="Cancel Process")
 
 
 
@@ -135,6 +132,7 @@ def main():
     dp.add_handler(CommandHandler("UpdateProfile", UpdateProfile))
     dp.add_handler(CommandHandler("BookingGuide", BookingGuide))
     dp.add_handler(CommandHandler("PaymentType", PaymentType))
+    dp.add_handler(CommandHandler("CancelBooking", CancelGuide))
     dp.add_handler(CommandHandler("Policy", Policy))
 
     # on noncommand i.e message for invalid messages
