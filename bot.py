@@ -62,9 +62,9 @@ def BookingGuide(update, context):
                "-> Make payment, get host to accept -> Charge🔌"
     update.message.reply_text(output)
     update.message.reply_text("For ChargeEV chargers")
-    context.bot.sendAnimation(chat_id=update.effective_cat.id,
-                             animation="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fonplatform.GIF?alt=media&token=dd395075-883b-46bb-b06f-e6cfef3d4618",
-                              caption="For ChargeEV chargers")
+    context.bot.sendPhoto(chat_id=update.effective_chat.id,
+                          photo="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fegbtc%20(2).jpg?alt=media&token=fa2c426c-c216-413b-b017-4fe140d1a083",
+                          caption="Example Image")
     update.message.reply_text("For non ChargeEV chargers")
 
 
