@@ -67,6 +67,9 @@ def BookingGuide(update, context):
                             video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcompressedbooking.mp4?alt=media&token=da6ee245-22ad-40c6-94de-ae3876e19313",
                           )
     update.message.reply_text("For non ChargeEV chargers")
+    context.bot.sendVideo(chat_id=update.effective_chat.id,
+                          video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcompressedbookingnp.mp4?alt=media&token=968d3ae2-d991-4a0d-bd88-4359c872294c",
+                          )
 
 
 def CancelGuide(update, context):
