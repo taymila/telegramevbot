@@ -43,7 +43,13 @@ def queryHandler(update, context):
                                   'Press /help to learn more about me')
     if (update.callback_query.data == "2"):
         context.bot.send_message(chat_id=update.effective_chat.id,
-                             text= "You selected Host")
+                             text='Hey host 🔌\n\nTo learn more about ChargeEV\nEnter: \n\n'
+                                  '/AddingLocation\n\n'
+                                  '/AcceptingPayment\n\n'
+                                  '/Reviews\n\n'
+                                  '/Policy\n\n'
+                                  '/HostingTips\n\n'
+                                  'Press /help to learn more about me')
     else:
         return
 
@@ -93,7 +99,7 @@ def crypto(update, context):
     update.message.reply_text("To make a crypto transfer, request the host to send their wallet address 👝. \n\n ChargeEV will not be responsible for loss funds")
     context.bot.sendPhoto(update.effective_chat.id,
                           photo="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fegbtc%20(2).jpg?alt=media&token=fa2c426c-c216-413b-b017-4fe140d1a083",
-                          caption="Example Image")
+                          caption="Example QRCode")
 
 def paynow(update, context):
     update.message.reply_text("To make a paynow transfer, request the host to send their Phone Number or QR code 📱. \n\n ChargeEV will not be responsible for loss funds")
