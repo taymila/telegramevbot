@@ -57,6 +57,9 @@ def UpdateProfile(update, context):
     output = "📱To update profile🙍‍♂️🙍‍♀️:\n\n Go into user profile page -> Edit Profile -> Upload new profile picture -> Key in new first name" \
                "-> New last name -> New phone number 📱 -> Update"
     update.message.reply_text(output)
+    context.bot.sendVideo(chat_id=update.effective_chat.id,
+                          video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcompressedprofile.mp4?alt=media&token=3c03cd6c-16bd-4887-a501-4b275ec9659c",
+                          )
 
 def BookingGuide(update, context):
     output = "To book 🔌 :\n\n Go to Charge Map -> Select Charger -> Book charger -> Contact host if required" \
