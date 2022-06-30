@@ -67,6 +67,13 @@ def UpdateProfile(update, context):
                           video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcompressedprofile.mp4?alt=media&token=3c03cd6c-16bd-4887-a501-4b275ec9659c",
                           )
 
+def AddingLocation(update, context):
+    output = "📱To add location ️:\n\n Go into Host page -> Add New Location -> Select location type -> Key in your Address -> Enter your charger type -> Add an image -> Enter your price -> Select payment method -> Done"
+    update.message.reply_text(output)
+    context.bot.sendVideo(chat_id=update.effective_chat.id,
+                          video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcompressedprofile.mp4?alt=media&token=3c03cd6c-16bd-4887-a501-4b275ec9659c",
+                          )
+
 def BookingGuide(update, context):
     output = "To book 🔌 :\n\n Go to Charge Map -> Select Charger -> Book charger -> Contact host if required" \
                "-> Make payment, get host to accept -> Charge🔌"
@@ -88,10 +95,21 @@ def CancelGuide(update, context):
     context.bot.sendVideo(chat_id=update.effective_chat.id,
                             video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcompressedcancel.mp4?alt=media&token=821630d1-453e-43c2-a292-a1b43ff680c6")
 
+def Reviews(update, context):
+    output = "Reviews represent the average from users that have used your charger "
+    update.message.reply_text(output)
+    context.bot.sendVideo(chat_id=update.effective_chat.id,
+                            video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcompressedcancel.mp4?alt=media&token=821630d1-453e-43c2-a292-a1b43ff680c6")
+    update.message.reply_text("Ensure the charger is clearly captured in the photo, check to make sure charger is functional")
 
 
 def PaymentType(update, context):
-    output = "There are currently two main options to pay \n\n1)Paynow 📲 \n2)Crypto (Bitcoin & Ethereum) 🌏\n\n" \
+    output = "There are currently two main options to pay \n\n1)Paynow 📲 \n2)Crypto (Bitcoin & Ethereum) (Beta) 🌏\n\n" \
+                 "To find out more enter /Paynow or /Crypto to get more details on procedures"
+    update.message.reply_text(output)
+
+def AcceptingPayment(update, context):
+    output = "There are currently two main options to pay \n\n1)Cash 📲 \n2) QRCode: Paynow 📲, Crypto (Bitcoin & Ethereum) (Beta) 🌏\n\n" \
                  "To find out more enter /Paynow or /Crypto to get more details on procedures"
     update.message.reply_text(output)
 
@@ -110,7 +128,7 @@ def error(update, context):
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 def Policy(update, context):
-    update.message.reply_text("ChargeEV is not responsible or liable for any monetary loss or damage to your vehicle")
+    update.message.reply_text("ChargeEV is not responsible or liable for any monetary loss or damage to your vehicle or charger")
     update.message.reply_text("Please ensure to check if charger is working before transferring and to retain proof of payment 👝")
     update.message.reply_text("For any disputes, email chargeevnus@gmail.com")
 
@@ -139,12 +157,17 @@ def main():
     dp.add_handler(CommandHandler("Crypto", crypto))
     dp.add_handler(CommandHandler("Paynow", paynow))
 
-    #Host Queries
+    #User Queries
     dp.add_handler(CommandHandler("UpdateProfile", UpdateProfile))
     dp.add_handler(CommandHandler("BookingGuide", BookingGuide))
     dp.add_handler(CommandHandler("PaymentType", PaymentType))
     dp.add_handler(CommandHandler("CancelBooking", CancelGuide))
     dp.add_handler(CommandHandler("Policy", Policy))
+    dp.add_handler(CommandHandler("Reviews", Reviews))
+
+    #Host Queries
+    dp.add_handler(CommandHandler("AddingLocation", AddingLocation))
+
 
     # on noncommand i.e message for invalid messages
     dp.add_handler(MessageHandler(Filters.text, handle_message))
