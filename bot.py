@@ -113,6 +113,10 @@ def AcceptingPayment(update, context):
                  "To find out more enter /Paynow or /Crypto to get more details on procedures"
     update.message.reply_text(output)
 
+def HostingTips(update, context):
+        output = "We encourage hosts to ensure the chargers are usable and are clearly shown in the listing. \n\n Remember to confirm payment before closing the transcation "
+        update.message.reply_text(output)
+
 def crypto(update, context):
     update.message.reply_text("To make a crypto transfer, request the host to send their wallet address 👝. \n\n ChargeEV will not be responsible for loss funds")
     context.bot.sendPhoto(update.effective_chat.id,
@@ -167,6 +171,7 @@ def main():
 
     #Host Queries
     dp.add_handler(CommandHandler("AddingLocation", AddingLocation))
+    dp.add_handler(CommandHandler("HostingTips", HostingTips))
 
 
     # on noncommand i.e message for invalid messages
