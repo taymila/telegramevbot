@@ -71,7 +71,7 @@ def AddingLocation(update, context):
     output = "📱To add location ️:\n\n Go into Host page -> Add New Location -> Select location type -> Key in your Address -> Enter your charger type -> Add an image -> Enter your price -> Select payment method -> Done"
     update.message.reply_text(output)
     context.bot.sendVideo(chat_id=update.effective_chat.id,
-                          video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fcompressedprofile.mp4?alt=media&token=3c03cd6c-16bd-4887-a501-4b275ec9659c",
+                          video="https://firebasestorage.googleapis.com/v0/b/chargeev-986bd.appspot.com/o/telegrambot%2Fnewlocation.MP4?alt=media&token=0c64844e-9fe1-48ee-86b1-fcf718805532",
                           )
 
 def BookingGuide(update, context):
